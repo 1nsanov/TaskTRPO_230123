@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Database.BaseEntity;
+﻿using Database.BaseEntity;
 using Database.Domain;
+using Database.Dto;
 
 namespace Database.Services
 {
@@ -63,6 +59,21 @@ namespace Database.Services
             {
                 return new Status(e.Message);
             }
+        }
+
+        public List<TicketDto> GetList()
+        {
+            var tickets = _db.Tickets.ToList();
+            var dto = tickets.ConvertAll(t => new TicketDto()
+            {
+                Credits = t.Credits,
+                Date = t.Date,
+                FullName = t.FullName,
+                PassportCode = t.PassportCode,
+                Place = t.Place,
+                Price = t.Price
+            });
+            return dto;
         }
     }
 }
