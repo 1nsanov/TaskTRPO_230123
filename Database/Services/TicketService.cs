@@ -64,8 +64,9 @@ namespace Database.Services
         public List<TicketDto> GetList()
         {
             var tickets = _db.Tickets.ToList();
-            var dto = tickets.ConvertAll(t => new TicketDto()
+            var dto = tickets.ConvertAll(t => new TicketDto
             {
+                Id = t.Id,
                 Credits = t.Credits,
                 Date = t.Date,
                 FullName = t.FullName,

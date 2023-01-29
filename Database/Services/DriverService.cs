@@ -1,5 +1,6 @@
 ﻿using Database.BaseEntity;
 using Database.Domain;
+using Database.Dto;
 
 namespace Database.Services
 {
@@ -58,6 +59,19 @@ namespace Database.Services
             {
                 return new Status(e.Message);
             }
+        }
+
+        public List<DriverDto> GetList()
+        {
+            var drivers = _db.Drivers.ToList();
+            var dto = drivers.ConvertAll(d => new DriverDto
+            {
+                Id = d.Id,
+                Datebirth = d.Datebirth,
+                FullName = d.FullName,
+                PassportCode = d.PassportCode
+            });
+            return dto;
         }
     }
 }

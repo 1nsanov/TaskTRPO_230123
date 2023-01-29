@@ -1,6 +1,6 @@
 ﻿namespace Database.Dto
 {
-    public class TicketDto
+    public class TicketDto : EntityDtoBase
     {
         public int Place { get; set; }
         public decimal Price { get; set; }

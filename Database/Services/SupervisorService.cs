@@ -1,5 +1,6 @@
 ﻿using Database.BaseEntity;
 using Database.Domain;
+using Database.Dto;
 
 namespace Database.Services
 {
@@ -58,6 +59,19 @@ namespace Database.Services
             {
                 return new Status(e.Message);
             }
+        }
+
+        public List<SupervisorDto> GetList()
+        {
+            var supervisors = _db.Supervisors.ToList();
+            var dto = supervisors.ConvertAll(s => new SupervisorDto
+            {
+                Id = s.Id,
+                Address = s.Address,
+                Datebirth = s.Datebirth,
+                FullName = s.FullName,
+            });
+            return dto;
         }
     }
 }

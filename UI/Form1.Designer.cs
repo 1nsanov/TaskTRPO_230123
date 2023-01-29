@@ -64,13 +64,13 @@
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             // 
             // ViewMenu
@@ -97,24 +97,28 @@
             this.ViewMenuRoute.Name = "ViewMenuRoute";
             this.ViewMenuRoute.Size = new System.Drawing.Size(180, 22);
             this.ViewMenuRoute.Text = "Маршруты";
+            this.ViewMenuRoute.Click += new System.EventHandler(this.ViewMenuRoute_Click);
             // 
             // ViewMenuBus
             // 
             this.ViewMenuBus.Name = "ViewMenuBus";
             this.ViewMenuBus.Size = new System.Drawing.Size(180, 22);
             this.ViewMenuBus.Text = "Автобусы";
+            this.ViewMenuBus.Click += new System.EventHandler(this.ViewMenuBus_Click);
             // 
             // ViewMenuDriver
             // 
             this.ViewMenuDriver.Name = "ViewMenuDriver";
             this.ViewMenuDriver.Size = new System.Drawing.Size(180, 22);
             this.ViewMenuDriver.Text = "Водители";
+            this.ViewMenuDriver.Click += new System.EventHandler(this.ViewMenuDriver_Click);
             // 
             // ViewMenuSupervisor
             // 
             this.ViewMenuSupervisor.Name = "ViewMenuSupervisor";
             this.ViewMenuSupervisor.Size = new System.Drawing.Size(180, 22);
             this.ViewMenuSupervisor.Text = "Диспетчеры";
+            this.ViewMenuSupervisor.Click += new System.EventHandler(this.ViewMenuSupervisor_Click);
             // 
             // Form1
             // 

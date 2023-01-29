@@ -1,5 +1,6 @@
 ﻿using Database.BaseEntity;
 using Database.Domain;
+using Database.Dto;
 
 namespace Database.Services
 {
@@ -58,6 +59,24 @@ namespace Database.Services
             {
                 return new Status(e.Message);
             }
+        }
+
+        public List<RouteDto> GetList()
+        {
+            var routes = _db.Routes.ToList();
+            var dto = routes.ConvertAll(r => new RouteDto
+            {
+                 Id = r.Id,
+                 Area = r.Area,
+                 ArrivalTine = r.ArrivalTine,
+                 DispatchTime = r.DispatchTime,
+                 Distant = r.Distant,
+                 EndPoint = r.EndPoint,
+                 Number = r.Number,
+                 Region = r.Region,
+                 Weight = r.Weight
+            });
+            return dto;
         }
     }
 }

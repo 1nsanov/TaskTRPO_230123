@@ -1,5 +1,6 @@
 ﻿using Database.BaseEntity;
 using Database.Domain;
+using Database.Dto;
 
 namespace Database.Services
 {
@@ -59,6 +60,20 @@ namespace Database.Services
             {
                 return new Status(e.Message);
             }
+        }
+
+        public List<BusDto> GetList()
+        {
+            var buses = _db.Buses.ToList();
+            var dto = buses.ConvertAll(b => new BusDto
+            {
+                Id = b.Id,
+                Model = b.Model,
+                Number = b.Number,
+                NumberPlate = b.NumberPlate,
+                PlaceCount = b.PlaceCount,
+            });
+            return dto;
         }
     }
 }

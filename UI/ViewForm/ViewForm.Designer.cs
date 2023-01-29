@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class ViewFormTicket
+    partial class ViewForm
     {
         /// <summary>
         /// Required designer variable.
